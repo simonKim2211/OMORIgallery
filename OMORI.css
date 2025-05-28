@@ -1,0 +1,482 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#background-video {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+html {
+    min-height: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: OMORI;
+}
+
+@font-face {
+    font-family: 'OMORI' ;
+    src: url('images/OMORI_GAME2 FONT.ttf');
+}
+
+.book{
+    position: relative;
+    width: 1000px;
+    height: 700px;
+}
+
+.collab{
+  margin-left:230px;
+  margin-top:-100px;
+}
+
+.page{
+    display: none;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    width: 1000px;
+    height: 700px;
+    gap: -5x; /* Adjust the gap between grid items */
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+  }
+
+.active-page{
+  display: grid;
+
+}
+.page0{
+  background-image: url('images/PHOTO ALBUM REDRAWS/album pages/album_cover.png');
+}
+.page1{
+  background-image: url('images/PHOTO ALBUM REDRAWS/album pages/AP1.png');
+}
+
+.page2{
+  background-image: url('images/PHOTO ALBUM REDRAWS/album pages/AP2.png');
+}
+
+.page3{
+  background-image: url('images/PHOTO ALBUM REDRAWS/album pages/AP3.png');
+}
+
+.page4{
+  background-image: url('images/PHOTO ALBUM REDRAWS/album pages/AP4.png');
+}
+
+.page5{
+  background-image: url('images/PHOTO ALBUM REDRAWS/album pages/AP5.png');
+}
+
+.page6{
+  background-image: url('images/PHOTO ALBUM REDRAWS/album pages/AP6.png');
+}
+
+.page7{
+  background-image: url('images/PHOTO ALBUM REDRAWS/album pages/AP7.png');
+}
+
+.page8{
+  background-image: url('images/PHOTO ALBUM REDRAWS/album pages/AP8.png');
+}
+
+.slideshow-button {
+    width: 200px;
+    height: 220px;
+    background-size: cover; /* Adjust as needed (cover, contain, etc.) */
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    margin-left: 7px;
+    margin-top: 7px;
+
+  }
+  
+  .slideshow {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow: hidden;
+  }
+  
+  .slideshow-content {
+    text-align: center;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    transform: translateY(100%);
+    transition: transform 0.5s;
+  }
+  
+  .slide-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .slide {
+    max-width: 80%;
+    max-height: 80vh;
+    display: none;
+  }
+  
+  .slide.active {
+    display: block;
+  }
+  
+  .prev-button,
+  .next-button {
+    border: 0;
+    position: absolute;
+    top: 50%;
+  }
+
+  .prev-button img,
+  .next-button img {
+    width: 100px;
+    height: 60px;
+  }
+
+  
+  .prev-button {
+    left: 100px;
+  }
+  
+  .next-button {
+    right: 100px;
+  }
+
+  .close-button {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+  }
+
+  .prev-page,
+  .next-page{
+    position: absolute;
+    top: 50%;
+  }
+  .prev-page{
+    left:-100px;
+  }
+  .next-page{
+    right: -100px;
+  }
+
+.b1{
+    background-image: url('images/PHOTO ALBUM REDRAWS/1.jfif');
+    grid-row: 1;
+    grid-column: 1;
+    
+}
+
+.b2{
+    background-image: url('images/PHOTO ALBUM REDRAWS/2.png');
+    grid-row: 2;
+    grid-column: 2;
+}
+
+.b3{
+    background-image: url('images/PHOTO ALBUM REDRAWS/3.png');
+    grid-row: 3;
+    grid-column: 1;
+}
+
+.b4{
+  background-image: url('images/PHOTO ALBUM REDRAWS/4.png');
+  grid-row: 1;
+  grid-column: 3;
+}
+
+.b5{
+  background-image: url('images/PHOTO ALBUM REDRAWS/5.png');
+  grid-row: 2;
+  grid-column: 4;
+}
+
+.b6{
+  background-image: url('images/PHOTO ALBUM REDRAWS/6.png');
+  grid-row: 3;
+  grid-column: 3;
+}
+
+.b7{
+  background-image: url('images/PHOTO ALBUM REDRAWS/7.png');
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.b8{
+  background-image: url('images/PHOTO ALBUM REDRAWS/8.png');
+  grid-row: 2;
+  grid-column: 2;
+}
+
+.b9{
+  background-image: url('images/PHOTO ALBUM REDRAWS/9.png');
+  grid-row: 3;
+  grid-column: 1;
+}
+
+.b10{
+background-image: url('images/PHOTO ALBUM REDRAWS/10.png');
+grid-row: 1;
+grid-column: 3;
+}
+
+.b11{
+background-image: url('images/PHOTO ALBUM REDRAWS/11.png');
+grid-row: 2;
+grid-column: 4;
+}
+
+.b12{
+background-image: url('images/PHOTO ALBUM REDRAWS/12.png');
+grid-row: 3;
+grid-column: 3;
+}
+
+.b13{
+  background-image: url('images/PHOTO ALBUM REDRAWS/13.png');
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.b14{
+  background-image: url('images/PHOTO ALBUM REDRAWS/14.png');
+  grid-row: 2;
+  grid-column: 2;
+}
+
+.b15{
+  background-image: url('images/PHOTO ALBUM REDRAWS/15.png');
+  grid-row: 3;
+  grid-column: 1;
+}
+
+.b16{
+background-image: url('images/PHOTO ALBUM REDRAWS/16.png');
+grid-row: 1;
+grid-column: 3;
+}
+
+.b17{
+background-image: url('images/PHOTO ALBUM REDRAWS/17.png');
+grid-row: 2;
+grid-column: 4;
+}
+
+.b18{
+background-image: url('images/PHOTO ALBUM REDRAWS/18.png');
+grid-row: 3;
+grid-column: 3;
+}
+
+.b19{
+  background-image: url('images/PHOTO ALBUM REDRAWS/19.png');
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.b20{
+  background-image: url('images/PHOTO ALBUM REDRAWS/20.png');
+  grid-row: 2;
+  grid-column: 2;
+}
+
+.b21{
+  background-image: url('images/PHOTO ALBUM REDRAWS/21.png');
+  grid-row: 3;
+  grid-column: 1;
+}
+
+.b22{
+background-image: url('images/PHOTO ALBUM REDRAWS/22.png');
+grid-row: 1;
+grid-column: 3;
+}
+
+.b23{
+background-image: url('images/PHOTO ALBUM REDRAWS/23.png');
+grid-row: 2;
+grid-column: 4;
+}
+
+.b24{
+background-image: url('images/PHOTO ALBUM REDRAWS/24.png');
+grid-row: 3;
+grid-column: 3;
+}
+
+.b25{
+  background-image: url('images/PHOTO ALBUM REDRAWS/25.png');
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.b26{
+  background-image: url('images/PHOTO ALBUM REDRAWS/26.png');
+  grid-row: 2;
+  grid-column: 2;
+}
+
+.b27{
+  background-image: url('images/PHOTO ALBUM REDRAWS/27.png');
+  grid-row: 3;
+  grid-column: 1;
+}
+
+.b28{
+background-image: url('images/PHOTO ALBUM REDRAWS/28.png');
+grid-row: 1;
+grid-column: 3;
+}
+
+.b29{
+background-image: url('images/PHOTO ALBUM REDRAWS/29.jpg');
+grid-row: 2;
+grid-column: 4;
+}
+
+.b30{
+background-image: url('images/PHOTO ALBUM REDRAWS/30.png');
+grid-row: 3;
+grid-column: 3;
+}
+
+.b31{
+  background-image: url('images/PHOTO ALBUM REDRAWS/31.PNG');
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.b32{
+  background-image: url('images/PHOTO ALBUM REDRAWS/32.png');
+  grid-row: 2;
+  grid-column: 2;
+}
+
+.b33{
+  background-image: url('images/PHOTO ALBUM REDRAWS/33.png');
+  grid-row: 3;
+  grid-column: 1;
+}
+
+.b34{
+background-image: url('images/PHOTO ALBUM REDRAWS/34.png');
+grid-row: 1;
+grid-column: 3;
+}
+
+.b35{
+background-image: url('images/PHOTO ALBUM REDRAWS/35.png');
+grid-row: 2;
+grid-column: 4;
+}
+
+.b36{
+background-image: url('images/PHOTO ALBUM REDRAWS/36.png');
+grid-row: 3;
+grid-column: 3;
+}
+
+.b37{
+  background-image: url('images/PHOTO ALBUM REDRAWS/37.png');
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.b38{
+  background-image: url('images/PHOTO ALBUM REDRAWS/38.png');
+  grid-row: 2;
+  grid-column: 2;
+}
+
+.b39{
+  background-image: url('images/PHOTO ALBUM REDRAWS/39.png');
+  grid-row: 3;
+  grid-column: 1;
+}
+
+.b40{
+background-image: url('images/PHOTO ALBUM REDRAWS/40.png');
+grid-row: 1;
+grid-column: 3;
+}
+
+.b41{
+background-image: url('images/PHOTO ALBUM REDRAWS/41.png');
+grid-row: 2;
+grid-column: 4;
+}
+
+.b42{
+background-image: url('images/PHOTO ALBUM REDRAWS/42.png');
+grid-row: 3;
+grid-column: 3;
+}
+
+.b43{
+  background-image: url('images/PHOTO ALBUM REDRAWS/43.jpeg');
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.b44{
+  background-image: url('images/PHOTO ALBUM REDRAWS/44.png');
+  grid-row: 2;
+  grid-column: 2;
+}
+
+.b45{
+  background-image: url('images/PHOTO ALBUM REDRAWS/45.png');
+  grid-row: 3;
+  grid-column: 1;
+}
+
+.b46{
+background-image: url('images/PHOTO ALBUM REDRAWS/46.png');
+grid-row: 1;
+grid-column: 3;
+}
+
+.b47{
+background-image: url('images/PHOTO ALBUM REDRAWS/47.png');
+grid-row: 2;
+grid-column: 4;
+}
+
+.b48{
+background-image: url('images/PHOTO ALBUM REDRAWS/48.png');
+grid-row: 3;
+grid-column: 3;
+}
