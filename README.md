@@ -6,10 +6,12 @@ Collaborated with 50+ artists across the world to curate and display their artwo
 ### Use Instructions
 Clone the repository using
 <br/>
-<mark>git clone https://github.com/simonKim2211/OMORIgallery.git</mark>
+```
+git clone https://github.com/simonKim2211/OMORIgallery.git
+```
 
-Open the ```OMORI_GALLERY.html``` file
+Open the `OMORI_GALLERY.html` file
 <br/>
 OR
 <br/>
-go to <mark>https://rwphotoredrawcollab.carrd.co/#</mark>
+go to `https://rwphotoredrawcollab.carrd.co/#`
